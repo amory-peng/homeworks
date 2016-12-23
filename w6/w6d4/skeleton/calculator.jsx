@@ -37,6 +37,9 @@ class Calculator extends React.Component {
     return (event => this.setState({result: out}));
   }
 
+  clear() {
+    return (event => this.setState({result: 0, num1: '', num2: ''}));
+  }
   render() {
     return (
       <div>
@@ -46,6 +49,7 @@ class Calculator extends React.Component {
         <button onClick={this.calc('-')}>-</button>
         <button onClick={this.calc('x')}>*</button>
         <button onClick={this.calc('/')}>/</button>
+        <button onClick={this.clear()}>clc</button>
         <h1>{this.state.result}</h1>
       </div>
     );
